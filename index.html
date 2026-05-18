@@ -3,15 +3,50 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Pequeños Poliglas: Aventuras animales en italiano</title>
+  <title>Pequeños Poliglotas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/constitution.png">
+  <link rel="shortcut icon" href="./assets/images/constitution.png" type="image/png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/constitution.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/constitution.png">
   <link rel="manifest" href="./assets/site.webmanifest">
 
   <script type="module" crossorigin src="./assets/js/index.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/css/index.css">
+  <style>
+    .navbar-nav .nav-item {
+      position: relative;
+    }
+    .navbar-nav .nav-link[data-tooltip] {
+      position: relative;
+    }
+    .navbar-nav .nav-link[data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -2.75rem;
+      white-space: nowrap;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+      transition: opacity 0.15s ease;
+    }
+    .navbar-nav .nav-link[data-tooltip]:hover::after {
+      opacity: 1;
+    }
+
+    .animals {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +57,7 @@
         <span class="text-primary">
           <img src="./assets/images/constitution.png" alt="Pequeños Poliglotas">
         </span>
-        <span class="fw-bold">Pequeños Poliglotas: Aventuras Animales en Italiano</span>
+        <span class="fw-bold">Pequeños Poliglotas</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,16 +65,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a href="#hero" class="nav-link">Inicio</a></li>
-          <li class="nav-item"><a href="#courses" class="nav-link">Courses</a></li>
-          <li class="nav-item"><a href="#mentor" class="nav-link">Mentor</a></li>
-          <li class="nav-item"><a href="#group" class="nav-link">Group</a></li>
-          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-          <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#inicio" class="nav-link" data-tooltip="Inicio">Home</a></li>
+          <li class="nav-item"><a href="#AssociaEImpara" class="nav-link" data-tooltip="Asocia y Aprende">Associa e Impara</a></li>
+          <li class="nav-item"><a href="#MemoriaNellaGiungla" class="nav-link" data-tooltip="Memoria en la Selva">Memoria nella Giungla</a></li>
+          <li class="nav-item"><a href="#AscoltaEScegli" class="nav-link" data-tooltip="Escucha y Elige">Ascolta e Scegli</a></li>
+          <li class="nav-item"><a href="#ClassificaGliAnimali" class="nav-link" data-tooltip="Clasifica los Animales">Classifica gli Animali</a></li>
         </ul>
-        <div class="d-flex gap-3 align-items-center">
-          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Get Started</a>
-        </div>
       </div>
     </div>
   </nav>
@@ -49,28 +80,19 @@
     <div class="container ">
       <div class="row align-items-center gy-8">
         <div class="col-lg-6">
-          <span
-            class="badge bg-primary bg-opacity-10 text-primary px-4 py-3 fw-normal border border-primary rounded-pill">
-            <span><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor"
-                class="icon icon-tabler icons-tabler-filled icon-tabler-circle">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z" />
-              </svg></span>
-            <span class="ms-1">New Courses Available</span></span>
           <h1 class="display-4 fw-bold  mt-4">
-            Master New Skills
-            <span class="text-primary">Online Anytime,</span>
-            Anywhere
+            Pequeños Poliglotas:
+            <span class="text-primary">Aventuras Animales</span>
+            en Italiano
           </h1>
 
           <p class="my-6 lead fw-normal">
-            Join over 50,000+ students learning from world-class mentors. Transform your career with industry-leading
-            courses.
+            Desarrolla el reconocimiento y comprensión básica de vocabulario en italiano relacionado con animales, a través de actividades digitales interactivas.
           </p>
           <div class="d-flex flex-md-row flex-column justify-content-start   gap-3">
-            <a href="#!" class="btn btn-primary">
+            <a href="#AssociaEImpara" class="btn btn-primary">
 
-              <span>Start Learning</span>
+              <span>Inicia a Aprender</span>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -81,75 +103,15 @@
                 </svg>
               </span>
             </a>
-            <a href="#" class="btn btn-light">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-brand-youtube text-danger">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <rect x="3" y="5" width="18" height="14" rx="4" />
-                  <path d="M10 9l5 3l-5 3z" />
-                </svg>
-              </span>
-              <span class="ms-1">YouTube Channel</span></a>
-          </div>
-          <div class="d-flex gap-6 mt-8">
-            <div class="d-flex align-items-center gap-2">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-users text-primary">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
-                </svg>
-              </span>
-              <small class="mb-0"><span class="fw-bold">50K+</span> Students</small>
-            </div>
-            <div class="d-flex align-items-center gap-2">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-book text-primary">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                  <path d="M3 6l0 13" />
-                  <path d="M12 6l0 13" />
-                  <path d="M21 6l0 13" />
-                </svg>
-
-              </span>
-              <small class="mb-0"><span class="fw-bold">200+ </span> Courses</small>
-            </div>
-            <div class="d-flex align-items-center gap-2">
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-award text-primary">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M12 9m-6 0a6 6 0 1 0 12 0a6 6 0 1 0 -12 0" />
-                  <path d="M12 15l3.4 5.89l1.598 -3.233l3.598 .232l-3.4 -5.889" />
-                  <path d="M6.802 12l-3.4 5.89l3.598 -.233l1.598 3.232l3.4 -5.889" />
-                </svg>
-
-              </span>
-              <small class="mb-0"><span class="fw-bold">4.9</span> Rating</small>
-            </div>
-
-
-
           </div>
         </div>
         <div class="col-lg-6">
           <div class="card p-3 rounded-5  shadow-sm">
             <div class="position-relative">
               <div class="position-relative">
-                <img src="./assets/images/hero-img.jpg" alt="about" class="rounded-5 img-fluid" />
+                <img src="./assets/images/hero-img.png" alt="about" class="rounded-5 img-fluid" />
 
-                <a href="https://www.youtube.com/watch?v=CivuutI6lXY"
+                <a href="https://www.youtube.com/watch?v=D-ykZVt_JT4"
                   class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
                     class="icon icon-tabler icons-tabler-filled icon-tabler-player-play">
@@ -157,45 +119,6 @@
                     <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" />
                   </svg>
                 </a>
-
-                <div class="position-absolute top-0 end-0  me-n8 mt-n4">
-                  <div class="bg-white shadow-sm rounded-pill d-flex align-items-center gap-3 px-3 py-2  mb-4 border"
-                    style="width: 180px;">
-                    <div class="avatar-group">
-                      <img src="./assets/images/avatar-1.jpg" alt="" class="avatar avatar-sm rounded-circle">
-                      <img src="./assets/images/avatar-2.jpg" alt="" class="avatar avatar-sm rounded-circle">
-                      <img src="./assets/images/avatar-3.jpg" alt="" class="avatar avatar-sm rounded-circle">
-                    </div>
-                    <div class="d-flex flex-column text-xs lh-sm">
-                      <span class="fw-bold">Join 50k+</span>
-                      <span>Students</span>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="position-absolute bottom-0 start-0  ms-n8 mb-n8">
-                  <div class="bg-white shadow-sm rounded-pill d-flex align-items-center gap-2 px-3 py-2  mb-4 border"
-                    style="width: 170px;">
-                    <div
-                      class="icon-shape icon-md rounded-circle bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-book text-primary">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
-                        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
-                        <path d="M3 6l0 13"></path>
-                        <path d="M12 6l0 13"></path>
-                        <path d="M21 6l0 13"></path>
-                      </svg>
-                    </div>
-                    <div class="d-flex flex-column text-xs lh-sm">
-                      <span class="fw-bold">200+ Courses</span>
-                      <span>Available Now</span>
-                    </div>
-
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -203,20 +126,202 @@
         </div>
       </div>
   </section>
-  <section class="py-lg-13 py-8" id="courses">
+  <section class="py-lg-13 py-8" id="AssociaEImpara">
     <div class="container">
       <div class="row text-center">
-        <div class="col-lg-6 mx-auto">
+        <div class="col-lg-10 mx-auto">
           <div class="mb-10">
-            <span class="text-primary text-uppercase small fw-semibold" style="letter-spacing: .125rem;">Course</span>
-            <h2 class="fw-bold mt-4 mb-4">Explore Our Popular <span class="text-primary">Courses</span></h2>
+            <span class="text-primary text-uppercase large fw-semibold" style="letter-spacing: .125rem;">Actividad 1</span>
+            <h2 class="fw-bold mt-4 mb-4">Asocia y aprende - <span class="text-primary">Associa e Impara</span></h2>
             <p class="mb-0">
-              Choose from hundreds of courses designed by industry experts to help you achieve your goals.
+              En esta actividad, deberás relacionar imágenes de animales con su nombre correspondiente en italiano, favoreciendo el reconocimiento visual y la adquisición de vocabulario básico. <b> Para jugar debes arrastrar la palabra correcta a la imagen correspondiente, Luego de acertar, podrás escuchar como se pronuncia cada palabra en italiano, reforzando así la asociación entre el término y su pronunciación.</b>
             </p>
           </div>
         </div>
       </div>
       <div>
+          <div class="game-container">
+
+            <!-- ANIMALES -->
+            <div class="animals">
+
+              <div class="animal-card dropzone" data-animal="gatto">
+                <img src="./assets/images/gato.webp" alt="Gato">
+
+                <button class="audio-btn" onclick="playAudio('gatto')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="cane">
+                <img src="./assets/images/Cane.png" alt="Perro">
+
+                <button class="audio-btn" onclick="playAudio('cane')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="pesce">
+                <img src="./assets/images/pez.png" alt="Pescado">
+
+                <button class="audio-btn" onclick="playAudio('pesce')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="Coniglio">
+                <img src="./assets/images/conejo.png" alt="Conejo">
+
+                <button class="audio-btn" onclick="playAudio('Coniglio')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+            </div>
+            <div class="words">
+
+              <div class="word" draggable="true" data-word="gatto">
+                Gatto
+              </div>
+
+              <div class="word" draggable="true" data-word="cane">
+                Cane
+              </div>
+
+              <div class="word" draggable="true" data-word="pesce">
+                Pesce
+              </div>
+
+              <div class="word" draggable="true" data-word="Coniglio">
+                Coniglio
+              </div>
+            </div>
+
+            <div class="animals">
+
+              <div class="animal-card dropzone" data-animal="Mucca">
+                <img src="./assets/images/vaca.webp" alt="Vaca">
+
+                <button class="audio-btn" onclick="playAudio('Mucca')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="Cavallo">
+                <img src="./assets/images/caballo.png" alt="Caballo">
+
+                <button class="audio-btn" onclick="playAudio('Cavallo')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="Gallina">
+                <img src="./assets/images/Gallina.webp" alt="Gallina">
+
+                <button class="audio-btn" onclick="playAudio('Gallina')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="Pecora">
+                <img src="./assets/images/oveja.png" alt="Oveja">
+
+                <button class="audio-btn" onclick="playAudio('Pecora')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+            </div>
+            <div class="words">
+              <div class="word" draggable="true" data-word="Mucca">
+                Mucca
+              </div>
+
+              <div class="word" draggable="true" data-word="Cavallo">
+                Cavallo
+              </div>
+
+              <div class="word" draggable="true" data-word="Gallina">
+                Gallina
+              </div>
+
+              <div class="word" draggable="true" data-word="Pecora">
+                Pecora
+              </div>
+            </div>
+
+            <div class="animals">
+              <div class="animal-card dropzone" data-animal="Leone">
+                <img src="./assets/images/leon.webp" alt="León">
+
+                <button class="audio-btn" onclick="playAudio('Leone')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="Tigre">
+                <img src="./assets/images/Tigre.png" alt="Tigre">
+
+                <button class="audio-btn" onclick="playAudio('Tigre')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="Zebra">
+                <img src="./assets/images/cebra.png" alt="cebra">
+
+                <button class="audio-btn" onclick="playAudio('Zebra')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+              <div class="animal-card dropzone" data-animal="Giraffa">
+                <img src="./assets/images/jirafa.webp" alt="Jirafa">
+
+                <button class="audio-btn" onclick="playAudio('Giraffa')" disabled>
+                  🔊 Escuchar
+                </button>
+              </div>
+
+            </div>
+
+            <!-- PALABRAS -->
+            <div class="words">
+
+              <div class="word" draggable="true" data-word="Leone">
+                Leone
+              </div>
+
+              <div class="word" draggable="true" data-word="Tigre">
+                Tigre
+              </div>
+
+              <div class="word" draggable="true" data-word="Zebra ">
+                Zebra
+              </div>
+
+              <div class="word" draggable="true" data-word="Giraffa">
+                Giraffa
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- AUDIOS -->
+          <audio id="gatto" src="./assets/audio/gatto.mp3"></audio>
+          <audio id="cane" src="./assets/audio/cane.mp3"></audio>
+          <audio id="pesce" src="./assets/audio/pesce.mp3"></audio>
+          <audio id="Coniglio" src="./assets/audio/Coniglio.mp3"></audio>
+          <audio id="Mucca" src="./assets/audio/Mucca.mp3"></audio>
+          <audio id="Cavallo" src="./assets/audio/Cavallo.mp3"></audio>
+          <audio id="Gallina" src="./assets/audio/Gallina.mp3"></audio>
+          <audio id="Pecora" src="./assets/audio/Pecora.mp3"></audio>
+          <audio id="Leone" src="./assets/audio/Leone.mp3"></audio>
+          <audio id="Tigre" src="./assets/audio/Tigre.mp3"></audio>
+          <audio id="Zebra" src="./assets/audio/Zebra.mp3"></audio>
+          <audio id="Giraffa" src="./assets/audio/Giraffa.mp3"></audio>
+
+          <script src="juego1.js"></script>
+
         <!-- Course Card Start -->
         <div class="row g-4">
           <!-- Course Card 1 -->
