@@ -58,7 +58,22 @@ dropzones.forEach(zone => {
 
 // REPRODUCIR AUDIO
 function playAudio(id) {
-  document.getElementById(id).play();
+  const audio = document.getElementById(id);
+  if (!audio) return;
+  const p = audio.play();
+  if (p !== undefined) {
+    p.catch(err => {
+      console.warn('Audio play failed for', id, err);
+      try {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.load();
+        audio.play().catch(e => console.error('Retry play failed for', id, e));
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  }
 }
 
 // SONIDOS
